@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!todo.modify;else elseBlock">
   <span
     class="todo-list-item__title">
       Title: {{ todo.title }}
@@ -8,8 +8,30 @@
   <button
     class="todo-list-item__button"
     (click)=" delitTodo.emit(todo) ">
-    Delete
+    Delite
+  </button>
+
+  <button
+    class="todo-list-item__button"
+    (click)=" editTodo.emit(todo) ">
+    Edit
   </button>
 
 </div>
+
+<ng-template #elseBlock>
+
+
+
+    <input #boxTitle (keyup)="onKeyTitle(boxTitle.value)">
+    <p>{{todo.title}}</p>
+
+    <input #boxDescription (keyup)="onKeyDescription(boxDescription.value)">
+    <p>{{todo.description}}</p>
+
+    <button (click)=" saveTodo.emit(todo)" >Save</button>
+
+
+
+  </ng-template>
 

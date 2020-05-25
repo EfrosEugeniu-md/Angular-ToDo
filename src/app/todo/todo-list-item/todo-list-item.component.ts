@@ -9,9 +9,20 @@ import {Todo} from '../todo-list/todo-list.component';
 export class TodoListItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() delitTodo = new EventEmitter<Todo>();
+  @Output() editTodo = new EventEmitter<Todo>();
+  @Output() saveTodo = new EventEmitter<Todo>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  onKeyTitle(value: string) {
+    this.todo.editTitle = value;
+  }
+
+  onKeyDescription(value: string) {
+    this.todo.editDiscriptin = value;
   }
 }

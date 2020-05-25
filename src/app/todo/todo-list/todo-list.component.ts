@@ -3,6 +3,9 @@ import { Component, Input } from '@angular/core';
 export interface Todo {
   title: string;
   description: string;
+  modify?: boolean;
+  editTitle?: string;
+  editDiscriptin?: string;
 }
 
 @Component({
@@ -21,5 +24,18 @@ export class TodoListComponent {
 
   onDelitItem(todo: Todo) {
     this.todos = this.todos.filter(item => item.title !== todo.title);
+  }
+
+  onEditItem(todo: Todo){
+    const todoForEdit = this.todos.find(item => item.title === todo.title);
+    todoForEdit.modify = !todoForEdit.modify;
+
+  }
+
+  onSaveItem(todo: Todo) {
+    const todoForEdit = this.todos.find(item => item.title === todo.title);
+    todoForEdit.title = todoForEdit.editTitle ? todoForEdit.editTitle : todoForEdit.title;
+    todoForEdit.description = todoForEdit.editDiscriptin ? todoForEdit.editDiscriptin : todoForEdit.description;
+    todoForEdit.modify = !todoForEdit.modify;
   }
 }

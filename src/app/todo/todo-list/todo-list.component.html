@@ -6,6 +6,8 @@
 
     <app-todo-list-item
       (delitTodo)="onDelitItem(todo)"
+      (editTodo)="onEditItem(todo)"
+      (saveTodo)="onSaveItem(todo)"
       [todo]="todo">
     </app-todo-list-item>
 
