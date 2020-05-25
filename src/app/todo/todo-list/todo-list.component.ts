@@ -18,4 +18,8 @@ export class TodoListComponent {
   onItemHover(title: string): void {
     this.titleHovered = title;
   }
+
+  onDelitItem(todo: Todo) {
+    this.todos = this.todos.filter(item => item.title !== todo.title);
+  }
 }

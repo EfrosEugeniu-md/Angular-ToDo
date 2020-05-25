@@ -1,12 +1,14 @@
 <div class="todo-list">
 
-  <div class="todo-list-item" *ngFor="let todo of todos;" (mouseover)="onItemHover(todo.title)">
-    <span
-      class="todo-list-item__title"
-      [ngClass]="{ 'active': titleHovered === todo.title, 'inactive': titleHovered !== todo.title }">
-      Title: {{ todo.title }}
-    </span>
-    <span class="todo-list-item__description">Description: {{ todo.description }}</span>
+  <div class="todo-list-item"
+       *ngFor="let todo of todos;"
+       (mouseover)="onItemHover(todo.title)">
+
+    <app-todo-list-item
+      (delitTodo)="onDelitItem(todo)"
+      [todo]="todo">
+    </app-todo-list-item>
+
   </div>
 
   <!-- TODO: H/W move to single component -->

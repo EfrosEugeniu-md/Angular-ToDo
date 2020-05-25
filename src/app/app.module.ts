@@ -11,6 +11,7 @@ import { TodoFormComponent } from './todo/todo-form/todo-form.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoListItemComponent } from './todo/todo-list-item/todo-list-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TodoComponent,
     TodoFormComponent,
     TodoListComponent,
+    TodoListItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div>
+  <span
+    class="todo-list-item__title">
+      Title: {{ todo.title }}
+    </span>
+  <span class="todo-list-item__description">Description: {{ todo.description }}</span>
+
+  <button
+    class="todo-list-item__button"
+    (click)=" delitTodo.emit(todo) ">
+    Delete
+  </button>
+
+</div>
+
