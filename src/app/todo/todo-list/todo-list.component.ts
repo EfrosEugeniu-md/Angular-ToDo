@@ -17,6 +17,8 @@ export class TodoListComponent {
 
   @Input() todos: Todo[];
   titleHovered: string;
+  searshType = true;
+  searsWord: string;
 
   onItemHover(title: string): void {
     this.titleHovered = title;

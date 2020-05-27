@@ -1,12 +1,27 @@
 <div class="todo-list">
 
+  <input
+    #searchInput
+    type="text"
+    placeholder="Searsh"
+    (input)="searsWord=$event.target.value"
+  >
+
+  <input type="radio" id="title" name="type" value="title" checked="true" (change)="searshType=true">
+  <label for="title">title</label>
+
+  <input type="radio" id="description" name="type" value="description" (change)="searshType=false">
+  <label for="description">description</label><br>
+
   <div class="todo-list-item"
-       *ngFor="let todo of todos;"
+       *ngFor="let todo of todos | filterTodos : searshType : searsWord ;"
        (mouseover)="onItemHover(todo.title)">
 
     <app-todo-list-item
       (delitTodo)="onDelitItem(todo)"
+      (delitTodo)="searchInput.value = ''"
       (editTodo)="onEditItem(todo)"
+      (editTodo)="searchInput.value = ''"
       (saveTodo)="onSaveItem(todo)"
       [todo]="todo">
     </app-todo-list-item>
