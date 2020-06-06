@@ -11,5 +11,23 @@
     [(ngModel)]="description"
     [ngModelOptions]="{standalone: true}">
 
+  <input
+    type="text"
+    placeholder="Autor"
+    [(ngModel)]="author"
+    [ngModelOptions]="{standalone: true}">
+
+  <input
+    type="text"
+    placeholder="Priorety"
+    [(ngModel)]="priority"
+    [ngModelOptions]="{standalone: true}">
+
+  <input
+    type="text"
+    placeholder="Deadline"
+    [(ngModel)]="deadline"
+    [ngModelOptions]="{standalone: true}">
+
   <button (click)="onSumbit()">Submit</button>
 </form>

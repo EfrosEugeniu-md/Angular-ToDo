@@ -14,13 +14,13 @@ export class TodoComponent {
     { title: 'Talk to John', description: 'John\'s number: 079xxxxxx' },
   ];
 
-  handleTodoSubmited({ title, description }: Todo): void {
+  handleTodoSubmited({ title, description, author, priority, deadline }: Todo): void {
     const isTodoAlreadyExists = this.todos.some((todo: Todo) => {
       return (title === todo.title) && (description === todo.description);
     });
 
     if (!isTodoAlreadyExists) {
-      this.todos.push({ title, description });
+      this.todos.push({ title, description , author, priority, deadline});
     }
   }
 }

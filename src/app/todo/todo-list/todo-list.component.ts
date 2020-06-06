@@ -3,6 +3,9 @@ import { Component, Input } from '@angular/core';
 export interface Todo {
   title: string;
   description: string;
+  author?: string;
+  priority?: string;
+  deadline?: Date;
   modify?: boolean;
   editTitle?: string;
   editDiscriptin?: string;
