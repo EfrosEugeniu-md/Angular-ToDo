@@ -1,33 +1,33 @@
-<form class="todo-form">
+<form class="todo-form" [formGroup]="myForm">
   <input
     type="text"
     placeholder="Title"
-    [(ngModel)]="title"
-    [ngModelOptions]="{standalone: true}">
+    formControlName="title"
+    [(ngModel)]="title">
 
   <input
     type="text"
     placeholder="Description"
-    [(ngModel)]="description"
-    [ngModelOptions]="{standalone: true}">
+    formControlName="description"
+    [(ngModel)]="description">
 
   <input
     type="text"
     placeholder="Autor"
-    [(ngModel)]="author"
-    [ngModelOptions]="{standalone: true}">
+    formControlName="author"
+    [(ngModel)]="author">
 
   <input
     type="text"
     placeholder="Priorety"
-    [(ngModel)]="priority"
-    [ngModelOptions]="{standalone: true}">
+    formControlName="priority"
+    [(ngModel)]="priority">
 
   <input
     type="text"
     placeholder="Deadline"
-    [(ngModel)]="deadline"
-    [ngModelOptions]="{standalone: true}">
+    formControlName="deadline"
+    [(ngModel)]="deadline">
 
-  <button (click)="onSumbit()">Submit</button>
+  <button (click)="onSumbit()" [disabled]="myForm.invalid">Submit</button>
 </form>
